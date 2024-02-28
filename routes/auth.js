@@ -39,10 +39,10 @@ router.get(
 router.get("/logout", (req, res) => {
 	req.logout();
   
-	// Clear the session
+	
 	req.session = null;
   
-	// Redirect to Google logout URL
+	
 	const logoutURL = `https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=${process.env.CLIENT_URL1}`;
 	res.redirect(logoutURL);
   });
